@@ -7,6 +7,7 @@ Built with LangChain, Pytest, and local models via Ollama.
 ## Features
 - **Deterministic Evaluation**: Asserts that the exact expected tools (and arguments) are invoked.
 - **Non-Deterministic Evaluation**: Uses an LLM (Llama-3-8B) as a judge to score factual correctness and alignment based on strict JSON outputs.
+- **Observability**: Automatically pushes execution traces, latencies, and judge scores to Langfuse Cloud for pass/fail rate tracking.
 - **Real-World Dataset**: Evaluates against a subset of FinanceBench queries (Financial QA).
 
 ## Project Structure
@@ -27,10 +28,19 @@ To run the evaluation harness locally:
 
 2. Ensure Ollama is running locally with `llama3`.
 
-3. Run the evaluation suite:
+3. **(Optional)** Setup Langfuse for observability:
+   Create a `.env` file in the root directory:
+   ```env
+   LANGFUSE_PUBLIC_KEY="pk-lf-..."
+   LANGFUSE_SECRET_KEY="sk-lf-..."
+   LANGFUSE_BASE_URL="https://cloud.langfuse.com"
+   ```
+
+4. Run the evaluation suite:
    ```bash
    pytest tests/test_agent_eval.py -v
    ```
+   *(Metrics will also be appended locally to `data/metrics.jsonl` even without Langfuse).*
 
 ## Status
 - [x] Phase 1: Core Evaluation Engine & Test Data

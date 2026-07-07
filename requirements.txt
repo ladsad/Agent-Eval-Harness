@@ -4,3 +4,4 @@ langchain-ollama
 langfuse
 pydantic
 datasets
+python-dotenv

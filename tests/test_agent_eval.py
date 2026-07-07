@@ -4,6 +4,10 @@ import os
 import sys
 import time
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from langfuse.decorators import observe, langfuse_context
 
 # Ensure src is in path
@@ -73,3 +77,6 @@ def test_evaluation_harness(case):
     
     assert alignment >= 4, f"Alignment too low: {score}"
     assert factual >= 4, f"Factuality too low: {score}"
+    
+    # Flush traces before exit
+    langfuse_context.flush()

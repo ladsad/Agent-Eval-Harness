@@ -1,7 +1,7 @@
 import json
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import PromptTemplate
-from langfuse.decorators import observe
+from langfuse.decorators import observe, langfuse_context
 
 def get_judge_model():
     # Using Llama-3-8B locally via Ollama with strict JSON formatting
@@ -20,9 +20,14 @@ ACTUAL ANSWER: {actual_answer}
 
 @observe(as_type="generation")
 def evaluate_answer(expected_context: str, actual_answer: str) -> dict:
+    langfuse_context.update_current_observation(input={"expected_context": expected_context, "actual_answer": actual_answer})
     model = get_judge_model()
     chain = JUDGE_PROMPT | model
-    response = chain.invoke({"expected_context": expected_context, "actual_answer": actual_answer})
+    
+    lf_handler = langfuse_context.get_current_langchain_handler()
+    config = {"callbacks": [lf_handler]} if lf_handler else {}
+    
+    response = chain.invoke({"expected_context": expected_context, "actual_answer": actual_answer}, config=config)
     try:
         if hasattr(response, "content"):
             return json.loads(response.content)

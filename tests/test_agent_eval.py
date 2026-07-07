@@ -4,6 +4,7 @@ import os
 import sys
 import time
 from datetime import datetime
+from langfuse.decorators import observe, langfuse_context
 
 # Ensure src is in path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -34,6 +35,7 @@ def run_agent(query: str):
         }
 
 @pytest.mark.parametrize("case", test_cases, ids=[c["id"] for c in test_cases])
+@observe()
 def test_evaluation_harness(case):
     start_time = time.time()
     
@@ -59,6 +61,11 @@ def test_evaluation_harness(case):
         "alignment_score": alignment,
         "factual_correctness": factual
     })
+    
+    if os.environ.get("LANGFUSE_PUBLIC_KEY"):
+        langfuse_context.score(name="tool_match", value=1 if tool_match else 0)
+        langfuse_context.score(name="alignment", value=alignment)
+        langfuse_context.score(name="factual_correctness", value=factual)
     
     assert tool_match is True, f"Tool mismatch. Expected: {case['expected_tool_call']}, Actual: {result['actual_tool']}"
     assert "alignment_score" in score, "Missing alignment_score from judge output"

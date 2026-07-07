@@ -1,6 +1,7 @@
 from langchain_ollama import ChatOllama
 from langchain_core.tools import tool
 from langchain_core.messages import SystemMessage, HumanMessage
+from langfuse.decorators import observe
 
 @tool
 def search_financial_docs(ticker: str, year: int) -> str:
@@ -17,6 +18,7 @@ def fetch_stock_price(ticker: str, date: str) -> str:
     """Fetch the historical stock price for a company on a specific date."""
     return f"Mock stock price for {ticker} on {date}."
 
+@observe(as_type="generation")
 def run_agent_loop(query: str):
     llm = ChatOllama(model="llama3", temperature=0)
     tools = [search_financial_docs, calculator, fetch_stock_price]

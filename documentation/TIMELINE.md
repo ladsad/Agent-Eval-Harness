@@ -18,9 +18,9 @@ This timeline tracks the step-by-step implementation of the project plan.
 - [x] **Step 2.3:** Write Regression Assertions (asserting tool accuracy and judge score thresholds).
 
 ## Phase 3: Observability & Dashboards (Days 5-6)
-- [ ] **Decision:** Choose observability platform (Langfuse SDK vs local Streamlit + SQLite).
-- [ ] **Step 3.1:** Setup observability backend based on the decision.
-- [ ] **Step 3.2:** Verify dashboards capture pass/fail rates, latency, and average judge scores.
+- [x] **Decision:** Choose observability platform (Langfuse SDK vs local Streamlit + SQLite).
+- [x] **Step 3.1:** Setup observability backend based on the decision.
+- [x] **Step 3.2:** Verify dashboards capture pass/fail rates, latency, and average judge scores.
 
 ## Phase 4: CI/CD Pipeline Integration (Day 7)
 - [ ] **Step 4.1:** Create GitHub Actions Workflow (`.github/workflows/eval.yml`) triggering on `main` PRs.

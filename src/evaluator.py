@@ -1,6 +1,7 @@
 import json
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import PromptTemplate
+from langfuse.decorators import observe
 
 def get_judge_model():
     # Using Llama-3-8B locally via Ollama with strict JSON formatting
@@ -17,6 +18,7 @@ EXPECTED CONTEXT: {expected_context}
 ACTUAL ANSWER: {actual_answer}
 """)
 
+@observe(as_type="generation")
 def evaluate_answer(expected_context: str, actual_answer: str) -> dict:
     model = get_judge_model()
     chain = JUDGE_PROMPT | model

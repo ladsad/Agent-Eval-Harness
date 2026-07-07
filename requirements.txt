@@ -1,0 +1,6 @@
+pytest
+langchain
+langchain-ollama
+langfuse
+pydantic
+datasets

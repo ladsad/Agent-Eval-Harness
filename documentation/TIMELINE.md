@@ -23,5 +23,5 @@ This timeline tracks the step-by-step implementation of the project plan.
 - [x] **Step 3.2:** Verify dashboards capture pass/fail rates, latency, and average judge scores.
 
 ## Phase 4: CI/CD Pipeline Integration (Day 7)
-- [ ] **Step 4.1:** Create GitHub Actions Workflow (`.github/workflows/eval.yml`) triggering on `main` PRs.
-- [ ] **Step 4.2:** Simulate a regression (bad prompt) to verify the pipeline correctly fails the CI check.
+- [x] **Step 4.1:** Create GitHub Actions Workflow (`.github/workflows/eval.yml`) triggering on `main` PRs.
+- [x] **Step 4.2:** Simulate a regression (bad prompt) to verify the pipeline correctly fails the CI check.

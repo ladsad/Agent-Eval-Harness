@@ -46,4 +46,4 @@ To run the evaluation harness locally:
 - [x] Phase 1: Core Evaluation Engine & Test Data
 - [x] Phase 2: Agent Integration & Tool-Calling Evaluation
 - [x] Phase 3: Observability & Dashboards
-- [ ] Phase 4: CI/CD Pipeline Integration
+- [x] Phase 4: CI/CD Pipeline Integration

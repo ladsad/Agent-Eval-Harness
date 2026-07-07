@@ -1,0 +1,42 @@
+name: Agent Evaluation Harness
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: "pip"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Install and Start Ollama
+      run: |
+        curl -fsSL https://ollama.com/install.sh | sh
+        ollama serve &
+        # Wait for Ollama daemon to start
+        sleep 5
+        ollama pull llama3
+
+    - name: Run Evaluation Harness (Pytest)
+      env:
+        # Langfuse Observability (Optional, add to Github Secrets if desired)
+        LANGFUSE_PUBLIC_KEY: ${{ secrets.LANGFUSE_PUBLIC_KEY }}
+        LANGFUSE_SECRET_KEY: ${{ secrets.LANGFUSE_SECRET_KEY }}
+        LANGFUSE_BASE_URL: ${{ secrets.LANGFUSE_BASE_URL }}
+      run: |
+        pytest tests/test_agent_eval.py -v

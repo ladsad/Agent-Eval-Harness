@@ -7,6 +7,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.evaluator import evaluate_answer, check_tool_match
+from src.agent import run_agent_loop
 
 def load_test_cases():
     file_path = os.path.join(os.path.dirname(__file__), "..", "data", "test_cases.json")
@@ -15,29 +16,20 @@ def load_test_cases():
 
 test_cases = load_test_cases()
 
-def mock_agent_execution(query: str):
-    # Simulates Phase 2 target agent execution. 
-    # Returning dummy responses that match expected to ensure Phase 1 harness works.
-    if "Apple" in query:
+def run_agent(query: str):
+    try:
+        return run_agent_loop(query)
+    except Exception as e:
+        # Fallback if agent crashes (e.g. tool parsing failure from local LLM)
         return {
-            "actual_tool": {"name": "search_financial_docs", "arguments": {"ticker": "AAPL", "year": 2022}},
-            "actual_answer": "Apple's total net sales in 2022 reached $394,328 million."
-        }
-    elif "Microsoft" in query:
-        return {
-            "actual_tool": {"name": "search_financial_docs", "arguments": {"ticker": "MSFT", "year": 2022}},
-            "actual_answer": "Microsoft reported a net income of $72,738 million in 2022, which is higher than the $61,271 million reported in 2021."
-        }
-    else:
-        return {
-            "actual_tool": {"name": "calculator", "arguments": {}},
-            "actual_answer": "Tesla's YoY revenue growth in 2022 was approximately 51%."
+            "actual_tool": {},
+            "actual_answer": f"Agent crashed: {str(e)}"
         }
 
 @pytest.mark.parametrize("case", test_cases, ids=[c["id"] for c in test_cases])
 def test_evaluation_harness(case):
     # 1. Execute Target Agent
-    result = mock_agent_execution(case["query"])
+    result = run_agent(case["query"])
     
     # 2. Deterministic Check: Tool usage
     tool_match = check_tool_match(case["expected_tool_call"], result["actual_tool"])

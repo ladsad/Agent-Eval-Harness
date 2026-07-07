@@ -20,7 +20,7 @@ This document serves as an ongoing repository for technical insights, challenges
 
 ## Evaluation Insights
 *(Observations on agent behavior, common failure modes, or prompt engineering discoveries)*
-*   **[YYYY-MM-DD]** - *Insight*: ...
+*   **[2026-07-07]** - *Insight*: The standard local `llama3:8b` model struggles significantly with zero-shot LangChain tool selection. It frequently fails to output deterministic JSON tool payloads (even with explicit prompt constraints), causing the evaluation assertions to correctly fail. This perfectly demonstrates the harness's ability to catch base-model regressions or poorly fine-tuned tool-calling capabilities.
 
 ## General Notes & Future Ideas
 *(Ideas for V2, optimization thoughts, or helpful commands)*

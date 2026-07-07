@@ -11,11 +11,11 @@ This timeline tracks the step-by-step implementation of the project plan.
 - [x] **Step 1.4:** Implement the Pytest Wrapper to iterate over test cases and run checks.
 
 ## Phase 2: Agent Integration & Tool-Calling Evaluation (Days 3-4)
-- [ ] **Decision:** Select the Agent Framework (LangChain vs CrewAI) for the target agent.
-- [ ] **Decision:** Define the real-world tools the agent needs access to (e.g., SQL DB query, API fetch) based on the real dataset.
-- [ ] **Step 2.1:** Build the Target Agent equipped with the defined real tools.
-- [ ] **Step 2.2:** Implement Tool Execution Tracking to intercept tool choices and arguments.
-- [ ] **Step 2.3:** Write Regression Assertions (asserting tool accuracy and judge score thresholds).
+- [x] **Decision:** Select the Agent Framework (LangChain vs CrewAI) for the target agent.
+- [x] **Decision:** Define the real-world tools the agent needs access to (e.g., SQL DB query, API fetch) based on the real dataset.
+- [x] **Step 2.1:** Build the Target Agent equipped with the defined real tools.
+- [x] **Step 2.2:** Implement Tool Execution Tracking to intercept tool choices and arguments.
+- [x] **Step 2.3:** Write Regression Assertions (asserting tool accuracy and judge score thresholds).
 
 ## Phase 3: Observability & Dashboards (Days 5-6)
 - [ ] **Decision:** Choose observability platform (Langfuse SDK vs local Streamlit + SQLite).

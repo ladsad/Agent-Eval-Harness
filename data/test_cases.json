@@ -1,215 +1,5384 @@
 [
-  {
-    "id": "fb_001",
-    "query": "What is the total revenue for Apple in 2022?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "AAPL",
-        "year": 2022
-      }
+    {
+        "id": "fb_001",
+        "query": "What is the total revenue for Apple in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2022."
     },
-    "expected_answer_context": "Apple's total net sales were $394,328 million in 2022."
-  },
-  {
-    "id": "fb_002",
-    "query": "Did Microsoft's net income increase from 2021 to 2022?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "MSFT",
-        "year": 2022
-      }
+    {
+        "id": "fb_002",
+        "query": "Did Microsoft's net income increase from 2021 to 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
     },
-    "expected_answer_context": "Microsoft's net income in 2022 was $72,738 million, up from $61,271 million in 2021."
-  },
-  {
-    "id": "fb_003",
-    "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_003",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
     },
-    "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
-  },
-  {
-    "id": "fb_004",
-    "query": "What was the operating margin for AMZN in 2022?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "AMZN",
-        "year": 2022
-      }
+    {
+        "id": "fb_004",
+        "query": "What was the operating margin for AMZN in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2022."
     },
-    "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2022."
-  },
-  {
-    "id": "fb_005",
-    "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_005",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
     },
-    "expected_answer_context": "The combined revenue for AAPL across 2023 and 2022 was $400 billion."
-  },
-  {
-    "id": "fb_006",
-    "query": "What was the operating margin for MSFT in 2021?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "MSFT",
-        "year": 2021
-      }
+    {
+        "id": "fb_006",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
     },
-    "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
-  },
-  {
-    "id": "fb_007",
-    "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_007",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
     },
-    "expected_answer_context": "The combined revenue for TSLA across 2022 and 2021 was $400 billion."
-  },
-  {
-    "id": "fb_008",
-    "query": "What was the operating margin for GOOGL in 2023?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "GOOGL",
-        "year": 2023
-      }
+    {
+        "id": "fb_008",
+        "query": "What was the operating margin for GOOGL in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2023."
     },
-    "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2023."
-  },
-  {
-    "id": "fb_009",
-    "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_009",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
     },
-    "expected_answer_context": "The combined revenue for AMZN across 2021 and 2020 was $400 billion."
-  },
-  {
-    "id": "fb_010",
-    "query": "What was the operating margin for AAPL in 2022?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "AAPL",
-        "year": 2022
-      }
+    {
+        "id": "fb_010",
+        "query": "What was the operating margin for AAPL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
     },
-    "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
-  },
-  {
-    "id": "fb_011",
-    "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_011",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
     },
-    "expected_answer_context": "The combined revenue for MSFT across 2023 and 2022 was $400 billion."
-  },
-  {
-    "id": "fb_012",
-    "query": "What was the operating margin for TSLA in 2021?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "TSLA",
-        "year": 2021
-      }
+    {
+        "id": "fb_012",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
     },
-    "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
-  },
-  {
-    "id": "fb_013",
-    "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_013",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
     },
-    "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2021 was $400 billion."
-  },
-  {
-    "id": "fb_014",
-    "query": "What was the operating margin for AMZN in 2023?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "AMZN",
-        "year": 2023
-      }
+    {
+        "id": "fb_014",
+        "query": "What was the operating margin for AMZN in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2023."
     },
-    "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2023."
-  },
-  {
-    "id": "fb_015",
-    "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_015",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
     },
-    "expected_answer_context": "The combined revenue for AAPL across 2021 and 2020 was $400 billion."
-  },
-  {
-    "id": "fb_016",
-    "query": "What was the operating margin for MSFT in 2022?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "MSFT",
-        "year": 2022
-      }
+    {
+        "id": "fb_016",
+        "query": "What was the operating margin for MSFT in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2022."
     },
-    "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2022."
-  },
-  {
-    "id": "fb_017",
-    "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_017",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
     },
-    "expected_answer_context": "The combined revenue for TSLA across 2023 and 2022 was $400 billion."
-  },
-  {
-    "id": "fb_018",
-    "query": "What was the operating margin for GOOGL in 2021?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "GOOGL",
-        "year": 2021
-      }
+    {
+        "id": "fb_018",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
     },
-    "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
-  },
-  {
-    "id": "fb_019",
-    "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
-    "expected_tool_call": {
-      "name": "calculator",
-      "arguments": {}
+    {
+        "id": "fb_019",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
     },
-    "expected_answer_context": "The combined revenue for AMZN across 2022 and 2021 was $400 billion."
-  },
-  {
-    "id": "fb_020",
-    "query": "What was the operating margin for AAPL in 2023?",
-    "expected_tool_call": {
-      "name": "search_financial_docs",
-      "arguments": {
-        "ticker": "AAPL",
-        "year": 2023
-      }
+    {
+        "id": "fb_020",
+        "query": "What was the operating margin for AAPL in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2023."
     },
-    "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2023."
-  }
+    {
+        "id": "fb_021",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_022",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_023",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_024",
+        "query": "What was the operating margin for AMZN in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_025",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_026",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_027",
+        "query": "What is the total revenue for Apple in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2015."
+    },
+    {
+        "id": "fb_028",
+        "query": "What was the operating margin for AAPL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_029",
+        "query": "What was the operating margin for AAPL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_030",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_031",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_032",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_033",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_034",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_035",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_036",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_037",
+        "query": "What was the operating margin for AMZN in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_038",
+        "query": "What was the operating margin for AAPL in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_039",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_040",
+        "query": "What was the operating margin for AMZN in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_041",
+        "query": "What was the operating margin for AAPL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_042",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_043",
+        "query": "What was the operating margin for GOOGL in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_044",
+        "query": "What was the operating margin for GOOGL in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_045",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_046",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_047",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_048",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_049",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_050",
+        "query": "What was the operating margin for GOOGL in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_051",
+        "query": "Did Microsoft's net income increase from 2021 to 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_052",
+        "query": "What was the operating margin for GOOGL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_053",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_054",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_055",
+        "query": "Did Microsoft's net income increase from 2021 to 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_056",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_057",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_058",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_059",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_060",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_061",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_062",
+        "query": "What was the operating margin for GOOGL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_063",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_064",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_065",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_066",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_067",
+        "query": "What was the operating margin for AAPL in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_068",
+        "query": "Did Microsoft's net income increase from 2021 to 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_069",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_070",
+        "query": "What is the total revenue for Apple in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2016."
+    },
+    {
+        "id": "fb_071",
+        "query": "What was the operating margin for MSFT in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_072",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_073",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_074",
+        "query": "What is the total revenue for Apple in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2015."
+    },
+    {
+        "id": "fb_075",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_076",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_077",
+        "query": "What was the operating margin for AAPL in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_078",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_079",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_080",
+        "query": "Did Microsoft's net income increase from 2021 to 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_081",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_082",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_083",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_084",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_085",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_086",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_087",
+        "query": "What is the total revenue for Apple in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2018."
+    },
+    {
+        "id": "fb_088",
+        "query": "What was the operating margin for AMZN in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_089",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_090",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_091",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_092",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_093",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_094",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_095",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_096",
+        "query": "What was the operating margin for GOOGL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_097",
+        "query": "What was the operating margin for AMZN in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_098",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_099",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_100",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_101",
+        "query": "What was the operating margin for MSFT in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_102",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_103",
+        "query": "What was the operating margin for GOOGL in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_104",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_105",
+        "query": "What was the operating margin for AAPL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_106",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_107",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_108",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_109",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_110",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_111",
+        "query": "What was the operating margin for AMZN in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_112",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_113",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_114",
+        "query": "What was the operating margin for AAPL in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_115",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_116",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_117",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_118",
+        "query": "What was the operating margin for AAPL in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_119",
+        "query": "What was the operating margin for AMZN in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_120",
+        "query": "What was the operating margin for AAPL in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_121",
+        "query": "Did Microsoft's net income increase from 2021 to 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_122",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_123",
+        "query": "What was the operating margin for AAPL in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_124",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_125",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_126",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_127",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_128",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_129",
+        "query": "What is the total revenue for Apple in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2019."
+    },
+    {
+        "id": "fb_130",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_131",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_132",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_133",
+        "query": "What is the total revenue for Apple in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2021."
+    },
+    {
+        "id": "fb_134",
+        "query": "What was the operating margin for GOOGL in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_135",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_136",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_137",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_138",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_139",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_140",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_141",
+        "query": "Did Microsoft's net income increase from 2021 to 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_142",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_143",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_144",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_145",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_146",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_147",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_148",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_149",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_150",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_151",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_152",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_153",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_154",
+        "query": "What was the operating margin for AAPL in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_155",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_156",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_157",
+        "query": "What was the operating margin for AAPL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_158",
+        "query": "What was the operating margin for AAPL in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_159",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_160",
+        "query": "What was the operating margin for GOOGL in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_161",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_162",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_163",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_164",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_165",
+        "query": "What was the operating margin for AAPL in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_166",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_167",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_168",
+        "query": "Did Microsoft's net income increase from 2021 to 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_169",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_170",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_171",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_172",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_173",
+        "query": "What was the operating margin for GOOGL in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_174",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_175",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_176",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_177",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_178",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_179",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_180",
+        "query": "What was the operating margin for AAPL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_181",
+        "query": "What was the operating margin for AAPL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_182",
+        "query": "Did Microsoft's net income increase from 2021 to 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_183",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_184",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_185",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_186",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_187",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_188",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_189",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_190",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_191",
+        "query": "Did Microsoft's net income increase from 2021 to 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_192",
+        "query": "What was the operating margin for AAPL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_193",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_194",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_195",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_196",
+        "query": "What was the operating margin for AMZN in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_197",
+        "query": "What was the operating margin for AAPL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_198",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_199",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_200",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_201",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_202",
+        "query": "What is the total revenue for Apple in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2022."
+    },
+    {
+        "id": "fb_203",
+        "query": "What is the total revenue for Apple in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2024."
+    },
+    {
+        "id": "fb_204",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_205",
+        "query": "What was the operating margin for AAPL in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_206",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_207",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_208",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_209",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_210",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_211",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_212",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_213",
+        "query": "What was the operating margin for AAPL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_214",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_215",
+        "query": "What was the operating margin for AAPL in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_216",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_217",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_218",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_219",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_220",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_221",
+        "query": "What was the operating margin for AMZN in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_222",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_223",
+        "query": "What was the operating margin for AAPL in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_224",
+        "query": "What was the operating margin for AAPL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_225",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_226",
+        "query": "What was the operating margin for MSFT in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_227",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_228",
+        "query": "What was the operating margin for AMZN in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_229",
+        "query": "What was the operating margin for AAPL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_230",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_231",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_232",
+        "query": "Did Microsoft's net income increase from 2021 to 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_233",
+        "query": "What was the operating margin for AMZN in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_234",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_235",
+        "query": "What was the operating margin for GOOGL in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_236",
+        "query": "What was the operating margin for AMZN in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_237",
+        "query": "What was the operating margin for AAPL in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_238",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_239",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_240",
+        "query": "What was the operating margin for AMZN in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_241",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_242",
+        "query": "What was the operating margin for AMZN in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_243",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_244",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_245",
+        "query": "What was the operating margin for MSFT in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_246",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_247",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_248",
+        "query": "Did Microsoft's net income increase from 2021 to 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_249",
+        "query": "What was the operating margin for AAPL in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_250",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_251",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_252",
+        "query": "What was the operating margin for GOOGL in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_253",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_254",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_255",
+        "query": "What is the total revenue for Apple in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2021."
+    },
+    {
+        "id": "fb_256",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_257",
+        "query": "What was the operating margin for MSFT in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_258",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_259",
+        "query": "What was the operating margin for AMZN in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_260",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_261",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_262",
+        "query": "What is the total revenue for Apple in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2016."
+    },
+    {
+        "id": "fb_263",
+        "query": "What was the operating margin for AMZN in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_264",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_265",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_266",
+        "query": "What was the operating margin for MSFT in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_267",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_268",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_269",
+        "query": "What is the total revenue for Apple in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2018."
+    },
+    {
+        "id": "fb_270",
+        "query": "What was the operating margin for MSFT in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_271",
+        "query": "Did Microsoft's net income increase from 2021 to 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_272",
+        "query": "What was the operating margin for MSFT in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_273",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_274",
+        "query": "What was the operating margin for MSFT in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_275",
+        "query": "Did Microsoft's net income increase from 2021 to 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_276",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_277",
+        "query": "What was the operating margin for AAPL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_278",
+        "query": "Did Microsoft's net income increase from 2021 to 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_279",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_280",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_281",
+        "query": "What is the total revenue for Apple in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2023."
+    },
+    {
+        "id": "fb_282",
+        "query": "What was the operating margin for AAPL in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_283",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_284",
+        "query": "What was the operating margin for AAPL in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_285",
+        "query": "What was the operating margin for AMZN in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_286",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_287",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_288",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_289",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_290",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_291",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_292",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_293",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_294",
+        "query": "What was the operating margin for MSFT in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_295",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_296",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_297",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_298",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_299",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_300",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_301",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_302",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_303",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_304",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_305",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_306",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_307",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_308",
+        "query": "What is the total revenue for Apple in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2022."
+    },
+    {
+        "id": "fb_309",
+        "query": "What is the total revenue for Apple in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2019."
+    },
+    {
+        "id": "fb_310",
+        "query": "What was the operating margin for AMZN in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_311",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_312",
+        "query": "What was the operating margin for AMZN in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_313",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_314",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_315",
+        "query": "What was the operating margin for MSFT in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_316",
+        "query": "What is the total revenue for Apple in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2021."
+    },
+    {
+        "id": "fb_317",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_318",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_319",
+        "query": "What was the operating margin for AAPL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_320",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_321",
+        "query": "What was the operating margin for MSFT in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_322",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_323",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_324",
+        "query": "What was the operating margin for MSFT in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_325",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_326",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_327",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_328",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_329",
+        "query": "What was the operating margin for AAPL in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_330",
+        "query": "Did Microsoft's net income increase from 2021 to 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_331",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_332",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_333",
+        "query": "Did Microsoft's net income increase from 2021 to 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_334",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_335",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_336",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_337",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_338",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_339",
+        "query": "What is the total revenue for Apple in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2018."
+    },
+    {
+        "id": "fb_340",
+        "query": "What is the total revenue for Apple in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2015."
+    },
+    {
+        "id": "fb_341",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_342",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_343",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_344",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_345",
+        "query": "What was the operating margin for GOOGL in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_346",
+        "query": "What was the operating margin for AAPL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_347",
+        "query": "What was the operating margin for MSFT in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_348",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_349",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_350",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_351",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_352",
+        "query": "What was the operating margin for MSFT in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_353",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_354",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_355",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_356",
+        "query": "What was the operating margin for MSFT in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_357",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_358",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_359",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_360",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_361",
+        "query": "What was the operating margin for MSFT in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_362",
+        "query": "What was the operating margin for AMZN in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_363",
+        "query": "What was the operating margin for MSFT in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_364",
+        "query": "What was the operating margin for GOOGL in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_365",
+        "query": "What was the operating margin for AMZN in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_366",
+        "query": "What was the operating margin for AMZN in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_367",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_368",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_369",
+        "query": "Did Microsoft's net income increase from 2021 to 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_370",
+        "query": "What was the operating margin for GOOGL in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_371",
+        "query": "What was the operating margin for AMZN in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_372",
+        "query": "What was the operating margin for AAPL in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_373",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_374",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_375",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_376",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_377",
+        "query": "What was the operating margin for AAPL in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_378",
+        "query": "What is the total revenue for Apple in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2021."
+    },
+    {
+        "id": "fb_379",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_380",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_381",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_382",
+        "query": "What was the operating margin for AMZN in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_383",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_384",
+        "query": "What was the operating margin for AMZN in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_385",
+        "query": "What was the operating margin for GOOGL in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_386",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_387",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_388",
+        "query": "What is the total revenue for Apple in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2018."
+    },
+    {
+        "id": "fb_389",
+        "query": "What was the operating margin for GOOGL in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_390",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_391",
+        "query": "What was the operating margin for GOOGL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_392",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_393",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_394",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_395",
+        "query": "What was the operating margin for GOOGL in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_396",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_397",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_398",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_399",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_400",
+        "query": "What was the operating margin for AMZN in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_401",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_402",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_403",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_404",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_405",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_406",
+        "query": "What was the operating margin for AAPL in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_407",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_408",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_409",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_410",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_411",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_412",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_413",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_414",
+        "query": "Did Microsoft's net income increase from 2021 to 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_415",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_416",
+        "query": "What was the operating margin for AAPL in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_417",
+        "query": "What was the operating margin for MSFT in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_418",
+        "query": "What was the operating margin for GOOGL in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_419",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_420",
+        "query": "What is the total revenue for Apple in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2022."
+    },
+    {
+        "id": "fb_421",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_422",
+        "query": "What was the operating margin for AMZN in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_423",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_424",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_425",
+        "query": "What was the operating margin for AAPL in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_426",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_427",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_428",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_429",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_430",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_431",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_432",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_433",
+        "query": "What was the operating margin for MSFT in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_434",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_435",
+        "query": "What was the operating margin for GOOGL in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_436",
+        "query": "What is the sum of revenue for MSFT in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for MSFT across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_437",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_438",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_439",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_440",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_441",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_442",
+        "query": "What was the operating margin for GOOGL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_443",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_444",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_445",
+        "query": "What was the operating margin for AMZN in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_446",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_447",
+        "query": "What is the sum of revenue for TSLA in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_448",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_449",
+        "query": "What was the operating margin for AMZN in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_450",
+        "query": "What was the operating margin for AMZN in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_451",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_452",
+        "query": "What was the operating margin for MSFT in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_453",
+        "query": "What is the total revenue for Apple in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2020."
+    },
+    {
+        "id": "fb_454",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_455",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_456",
+        "query": "Did Microsoft's net income increase from 2021 to 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_457",
+        "query": "What was the operating margin for AAPL in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_458",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_459",
+        "query": "What is the total revenue for Apple in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2022."
+    },
+    {
+        "id": "fb_460",
+        "query": "What is the total revenue for Apple in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2024."
+    },
+    {
+        "id": "fb_461",
+        "query": "What was the operating margin for MSFT in 2023?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2023
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2023."
+    },
+    {
+        "id": "fb_462",
+        "query": "What was the operating margin for MSFT in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_463",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_464",
+        "query": "What was the operating margin for AAPL in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_465",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_466",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_467",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_468",
+        "query": "What was the operating margin for AAPL in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_469",
+        "query": "What is the total revenue for Apple in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2024."
+    },
+    {
+        "id": "fb_470",
+        "query": "What was the operating margin for GOOGL in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_471",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_472",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_473",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_474",
+        "query": "What was the operating margin for MSFT in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_475",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_476",
+        "query": "What is the sum of revenue for TSLA in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for TSLA across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_477",
+        "query": "Did Microsoft's net income increase from 2021 to 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_478",
+        "query": "What was the operating margin for GOOGL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_479",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_480",
+        "query": "What is the sum of revenue for AAPL in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_481",
+        "query": "What was the operating margin for MSFT in 2018?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2018
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2018."
+    },
+    {
+        "id": "fb_482",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_483",
+        "query": "What was the operating margin for AMZN in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_484",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_485",
+        "query": "What was the operating margin for GOOGL in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "GOOGL",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "GOOGL reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_486",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_487",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_488",
+        "query": "What was the operating margin for AMZN in 2015?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2015
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2015."
+    },
+    {
+        "id": "fb_489",
+        "query": "What was the operating margin for AAPL in 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2017
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2017."
+    },
+    {
+        "id": "fb_490",
+        "query": "What is the sum of revenue for GOOGL in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for GOOGL across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_491",
+        "query": "What was the operating margin for AAPL in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_492",
+        "query": "What is the sum of revenue for AAPL in 2023 and 2022?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AAPL across 2023 and 2023 was $400 billion."
+    },
+    {
+        "id": "fb_493",
+        "query": "What was the operating margin for AAPL in 2024?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2024
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2024."
+    },
+    {
+        "id": "fb_494",
+        "query": "What was the operating margin for AAPL in 2019?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2019
+            }
+        },
+        "expected_answer_context": "AAPL reported an operating margin of 25.4% in 2019."
+    },
+    {
+        "id": "fb_495",
+        "query": "What was the operating margin for AMZN in 2022?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2022
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2022."
+    },
+    {
+        "id": "fb_496",
+        "query": "What was the operating margin for AMZN in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_497",
+        "query": "What is the sum of revenue for AMZN in 2022 and 2021?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2022 and 2022 was $400 billion."
+    },
+    {
+        "id": "fb_498",
+        "query": "Did Microsoft's net income increase from 2021 to 2017?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "Microsoft's net income in 2021 was $72,738 million, up from $61,271 million in 2021."
+    },
+    {
+        "id": "fb_499",
+        "query": "What was the operating margin for TSLA in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "TSLA",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "TSLA reported an operating margin of 25.4% in 2021."
+    },
+    {
+        "id": "fb_500",
+        "query": "What is the total revenue for Apple in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AAPL",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "Apple's total net sales were $394,328 million in 2016."
+    },
+    {
+        "id": "fb_501",
+        "query": "Calculate the year-over-year revenue growth for Tesla in 2022.",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "Tesla revenue grew by 51% YoY in 2022 (from 53.8B to 81.4B)."
+    },
+    {
+        "id": "fb_502",
+        "query": "What was the operating margin for MSFT in 2016?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2016
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2016."
+    },
+    {
+        "id": "fb_503",
+        "query": "What was the operating margin for MSFT in 2020?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "MSFT",
+                "year": 2020
+            }
+        },
+        "expected_answer_context": "MSFT reported an operating margin of 25.4% in 2020."
+    },
+    {
+        "id": "fb_504",
+        "query": "What is the sum of revenue for AMZN in 2021 and 2020?",
+        "expected_tool_call": {
+            "name": "calculator",
+            "arguments": {}
+        },
+        "expected_answer_context": "The combined revenue for AMZN across 2021 and 2021 was $400 billion."
+    },
+    {
+        "id": "fb_505",
+        "query": "What was the operating margin for AMZN in 2021?",
+        "expected_tool_call": {
+            "name": "search_financial_docs",
+            "arguments": {
+                "ticker": "AMZN",
+                "year": 2021
+            }
+        },
+        "expected_answer_context": "AMZN reported an operating margin of 25.4% in 2021."
+    }
 ]

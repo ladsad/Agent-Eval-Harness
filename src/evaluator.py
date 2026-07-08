@@ -5,7 +5,7 @@ from langfuse.decorators import observe, langfuse_context
 
 def get_judge_model():
     # Using Llama-3-8B locally via Ollama with strict JSON formatting
-    return ChatOllama(model="llama3", temperature=0, format="json")
+    return ChatOllama(model="llama3.1", temperature=0, format="json")
 
 JUDGE_PROMPT = PromptTemplate.from_template("""
 You are an expert evaluator. Compare the ACTUAL ANSWER provided by an AI agent to the EXPECTED CONTEXT.
@@ -43,7 +43,7 @@ def check_tool_match(expected_tool: dict, actual_tool: dict) -> bool:
     
     # Check that all expected arguments are present in the actual arguments
     for k, v in exp_args.items():
-        if act_args.get(k) != v:
+        if str(act_args.get(k)).lower() != str(v).lower():
             return False
             
     return True

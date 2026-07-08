@@ -19,3 +19,7 @@
 {"timestamp": "2026-07-08T08:11:33.429280", "case_id": "fb_019", "latency_seconds": 0.25, "tool_match": false, "alignment_score": 0, "factual_correctness": 0}
 {"timestamp": "2026-07-08T08:11:40.491432", "case_id": "fb_020", "latency_seconds": 0.23, "tool_match": false, "alignment_score": 0, "factual_correctness": 1}
 {"timestamp": "2026-07-08T10:21:00.430968", "case_id": "fb_001", "latency_seconds": 9.01, "tool_match": false, "alignment_score": 0, "factual_correctness": 1}
+{"timestamp": "2026-07-08T10:36:50.969824", "case_id": "fb_001", "latency_seconds": 6.6, "tool_match": false, "alignment_score": 4, "factual_correctness": 5}
+{"timestamp": "2026-07-08T10:47:10.542357", "case_id": "fb_001", "latency_seconds": 15.92, "tool_match": false, "alignment_score": 4, "factual_correctness": 5}
+{"timestamp": "2026-07-08T10:47:42.583496", "case_id": "fb_025", "latency_seconds": 7.23, "tool_match": false, "alignment_score": 3, "factual_correctness": 5}
+{"timestamp": "2026-07-08T10:48:26.281116", "case_id": "fb_001", "latency_seconds": 7.79, "tool_match": true, "alignment_score": 4, "factual_correctness": 5}

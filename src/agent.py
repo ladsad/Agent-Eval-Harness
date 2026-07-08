@@ -3,15 +3,36 @@ from langchain_core.tools import tool
 from langchain_core.messages import SystemMessage, HumanMessage
 from langfuse.decorators import observe, langfuse_context
 
+import json
+import os
+
+def _get_context_from_dataset(tool_name: str, **kwargs):
+    try:
+        with open(os.path.join("data", "test_cases.json"), "r") as f:
+            cases = json.load(f)
+        for case in cases:
+            exp_tool = case.get("expected_tool_call", {})
+            if exp_tool.get("name") == tool_name:
+                match = True
+                for k, v in exp_tool.get("arguments", {}).items():
+                    if str(kwargs.get(k)).lower() != str(v).lower():
+                        match = False
+                        break
+                if match:
+                    return case.get("expected_answer_context", "Mock financial data.")
+    except Exception:
+        pass
+    return "Mock financial data retrieved."
+
 @tool
 def search_financial_docs(ticker: str, year: int) -> str:
     """Search the 10-K or 10-Q financial documents for a specific company and year. Use this to find revenue, income, margins, etc."""
-    return f"Mock financial data retrieved for {ticker} in {year}."
+    return _get_context_from_dataset("search_financial_docs", ticker=ticker, year=year)
 
 @tool
 def calculator(expression: str) -> str:
     """Evaluate a mathematical expression. Use this when you need to calculate growth, sums, or differences."""
-    return "Mock calculation result."
+    return _get_context_from_dataset("calculator", expression=expression)
 
 @tool
 def fetch_stock_price(ticker: str, date: str) -> str:

@@ -1,6 +1,11 @@
 import json
 import pytest
 import os
+
+# Fix for Git Bash / Conda environments with broken SSL_CERT_FILE paths
+if "SSL_CERT_FILE" in os.environ and not os.path.exists(os.environ["SSL_CERT_FILE"]):
+    del os.environ["SSL_CERT_FILE"]
+
 import sys
 import time
 from datetime import datetime
@@ -67,9 +72,9 @@ def test_evaluation_harness(case):
     })
     
     if os.environ.get("LANGFUSE_PUBLIC_KEY"):
-        langfuse_context.score(name="tool_match", value=1 if tool_match else 0)
-        langfuse_context.score(name="alignment", value=alignment)
-        langfuse_context.score(name="factual_correctness", value=factual)
+        langfuse_context.score_current_trace(name="tool_match", value=1 if tool_match else 0)
+        langfuse_context.score_current_trace(name="alignment", value=alignment)
+        langfuse_context.score_current_trace(name="factual_correctness", value=factual)
     
     assert tool_match is True, f"Tool mismatch. Expected: {case['expected_tool_call']}, Actual: {result['actual_tool']}"
     assert "alignment_score" in score, "Missing alignment_score from judge output"

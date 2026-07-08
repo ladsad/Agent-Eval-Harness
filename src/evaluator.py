@@ -18,16 +18,13 @@ EXPECTED CONTEXT: {expected_context}
 ACTUAL ANSWER: {actual_answer}
 """)
 
-@observe(as_type="generation")
+@observe()
 def evaluate_answer(expected_context: str, actual_answer: str) -> dict:
     langfuse_context.update_current_observation(input={"expected_context": expected_context, "actual_answer": actual_answer})
     model = get_judge_model()
     chain = JUDGE_PROMPT | model
     
-    lf_handler = langfuse_context.get_current_langchain_handler()
-    config = {"callbacks": [lf_handler]} if lf_handler else {}
-    
-    response = chain.invoke({"expected_context": expected_context, "actual_answer": actual_answer}, config=config)
+    response = chain.invoke({"expected_context": expected_context, "actual_answer": actual_answer})
     try:
         if hasattr(response, "content"):
             return json.loads(response.content)

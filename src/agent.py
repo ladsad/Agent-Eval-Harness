@@ -18,10 +18,10 @@ def fetch_stock_price(ticker: str, date: str) -> str:
     """Fetch the historical stock price for a company on a specific date."""
     return f"Mock stock price for {ticker} on {date}."
 
-@observe(as_type="generation")
+@observe()
 def run_agent_loop(query: str):
     langfuse_context.update_current_observation(input=query)
-    llm = ChatOllama(model="llama3", temperature=0)
+    llm = ChatOllama(model="llama3.1", temperature=0)
     tools = [search_financial_docs, calculator, fetch_stock_price]
     llm_with_tools = llm.bind_tools(tools)
     
@@ -36,10 +36,7 @@ def run_agent_loop(query: str):
         HumanMessage(content=query)
     ]
     
-    lf_handler = langfuse_context.get_current_langchain_handler()
-    config = {"callbacks": [lf_handler]} if lf_handler else {}
-    
-    first_response = llm_with_tools.invoke(messages, config=config)
+    first_response = llm_with_tools.invoke(messages)
     messages.append(first_response)
     
     tool_calls = getattr(first_response, 'tool_calls', [])
@@ -69,10 +66,10 @@ def run_agent_loop(query: str):
         t_name = actual_tool["name"]
         if t_name in tool_map:
             t = tool_map[t_name]
-            tool_msg = t.invoke(actual_tool["arguments"], config=config)
+            tool_msg = t.invoke(actual_tool["arguments"])
             messages.append(tool_msg)
                 
-        final_response = llm_with_tools.invoke(messages, config=config)
+        final_response = llm_with_tools.invoke(messages)
         actual_answer = final_response.content
     else:
         actual_answer = first_response.content
